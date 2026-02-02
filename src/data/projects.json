@@ -1,0 +1,45 @@
+[
+  {
+    "name": "web-tracing",
+    "role": "核心贡献者",
+    "link": "https://github.com/M-cheng-web/web-tracing",
+    "description": "一款基于 JavaScript 的前端全链路监控 SDK，覆盖行为埋点、性能指标（LCP/FCP/CLS）、异常捕获、资源加载及录屏回放功能。",
+    "contributions": [
+      "参与核心监控模块开发，优化数据上报策略（支持断网重连续传、闲时上报）。",
+      "重构性能采集逻辑以兼容多平台（Vue2/3、React），提升 SDK 稳定性与兼容性。"
+    ],
+    "tags": ["TypeScript", "Monitoring", "Performance", "SDK"]
+  },
+  {
+    "name": "vue3-crud-hooks",
+    "role": "作者",
+    "link": "https://github.com/YongHangPu/vue3-crud-hooks",
+    "description": "基于 Vue3 + Element Plus 的配置化 CRUD 组件库，旨在减少重复的后台管理系统表格/表单代码，支持通过 JSON 配置生成完整的增删改查界面。",
+    "contributions": [],
+    "tags": ["Vue3", "Element Plus", "CRUD", "LowCode"]
+  },
+  {
+    "name": "long-run-validator",
+    "role": "作者",
+    "link": "https://github.com/YongHangPu/long-run-validator",
+    "description": "前端系统老化测试工具，用于模拟长时间运行下的内存泄漏与性能衰退检测，支持自定义压力测试脚本。",
+    "contributions": [],
+    "tags": ["Testing", "Performance", "Automation"]
+  },
+  {
+    "name": "CronGenerator",
+    "role": "作者",
+    "link": "https://github.com/YongHangPu/CronGenerator",
+    "description": "一个 Vue3 + Element Plus 的 Cron 表达式生成器组件。",
+    "contributions": [],
+    "tags": ["Vue3", "Cron", "Component"]
+  },
+  {
+    "name": "tool_function",
+    "role": "作者",
+    "link": "https://github.com/YongHangPu/tool_function",
+    "description": "个人常用的前端工具函数库。",
+    "contributions": [],
+    "tags": ["JavaScript", "Utils"]
+  }
+]
