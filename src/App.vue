@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import { Monitor, Menu as IconMenu, Document, Folder, Moon, Sunny, Close } from '@element-plus/icons-vue'
 import { useDark, useToggle } from '@vueuse/core'
+import HexagonBackground from './components/HexagonBackground.vue'
 
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
@@ -20,61 +21,7 @@ const closeMobileMenu = () => {
 <template>
   <el-container class="layout-container">
     <!-- Global Animated Background -->
-    <div class="global-bg">
-      <div
-        class="bg-blob blob-1"
-        v-motion
-        :initial="{ x: -100, y: -100, opacity: 0, scale: 0.5 }"
-        :enter="{
-          x: 50,
-          y: 50,
-          opacity: 0.4,
-          scale: 1,
-          transition: {
-            duration: 8000,
-            repeat: Infinity,
-            repeatType: 'mirror',
-            ease: 'easeInOut'
-          }
-        }"
-      ></div>
-      <div
-        class="bg-blob blob-2"
-        v-motion
-        :initial="{ x: 100, y: 200, opacity: 0, scale: 0.5 }"
-        :enter="{
-          x: -50,
-          y: 100,
-          opacity: 0.3,
-          scale: 1.2,
-          transition: {
-            duration: 10000,
-            repeat: Infinity,
-            repeatType: 'mirror',
-            ease: 'easeInOut',
-            delay: 1000
-          }
-        }"
-      ></div>
-      <div
-        class="bg-blob blob-3"
-        v-motion
-        :initial="{ x: 0, y: 0, opacity: 0, scale: 0.5 }"
-        :enter="{
-          x: 100,
-          y: -100,
-          opacity: 0.3,
-          scale: 0.8,
-          transition: {
-            duration: 12000,
-            repeat: Infinity,
-            repeatType: 'mirror',
-            ease: 'easeInOut',
-            delay: 2000
-          }
-        }"
-      ></div>
-    </div>
+    <HexagonBackground />
 
     <el-header class="header">
       <div class="header-content container">
@@ -435,48 +382,4 @@ const closeMobileMenu = () => {
     }
   }
 
-/* Global Background Styles */
-.global-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-
-  .bg-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-  }
-
-  .blob-1 {
-    top: -10%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: var(--el-color-primary-light-8);
-    opacity: 0.3;
-  }
-
-  .blob-2 {
-    bottom: 20%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: var(--el-color-success-light-8);
-    opacity: 0.2;
-  }
-
-  .blob-3 {
-    top: 40%;
-    left: 20%;
-    width: 300px;
-    height: 300px;
-    background: var(--el-color-warning-light-8);
-    opacity: 0.2;
-  }
-}
 </style>

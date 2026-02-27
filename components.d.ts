@@ -25,7 +25,7 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElTag: typeof import('element-plus/es')['ElTag']
-    ParticleBackground: typeof import('./src/components/ParticleBackground.vue')['default']
+    HexagonBackground: typeof import('./src/components/HexagonBackground.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

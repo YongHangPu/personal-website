@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   // 处理路由切换时的滚动行为
   // 如果有保存的位置（如浏览器后退），则恢复该位置；否则滚动到页面顶部
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {
