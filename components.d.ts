@@ -28,5 +28,6 @@ declare module 'vue' {
     HexagonBackground: typeof import('./src/components/HexagonBackground.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VersionUpdateNotification: typeof import('./src/components/VersionUpdateNotification.vue')['default']
   }
 }

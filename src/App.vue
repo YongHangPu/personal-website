@@ -4,6 +4,7 @@ import { RouterView, useRoute } from 'vue-router'
 import { Monitor, Menu as IconMenu, Document, Folder, Moon, Sunny, Close } from '@element-plus/icons-vue'
 import { useDark, useToggle } from '@vueuse/core'
 import HexagonBackground from './components/HexagonBackground.vue'
+import VersionUpdateNotification from './components/VersionUpdateNotification.vue'
 
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
@@ -22,6 +23,8 @@ const closeMobileMenu = () => {
   <el-container class="layout-container">
     <!-- Global Animated Background -->
     <HexagonBackground />
+    <!-- Version Update Notification -->
+    <VersionUpdateNotification />
 
     <el-header class="header">
       <div class="header-content container">

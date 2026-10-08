@@ -30,7 +30,7 @@ function spaFallback() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  // GitHub Pages 项目页部署在子路径下（https://<user>.github.io/personal-website/）
+  // GitHub Pages 项目页与自有服务器均部署在 /personal-website/ 子路径下
   base: '/personal-website/',
   plugins: [
     vue(),
