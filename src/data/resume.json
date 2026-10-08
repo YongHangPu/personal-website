@@ -42,6 +42,25 @@
   ],
   "openSource": [
     {
+      "name": "deploygo",
+      "role": "作者",
+      "link": "https://github.com/YongHangPu/deploygo",
+      "description": "面向静态站点的桌面端发布工具，基于 Tauri + Vue3 构建，提供零停机部署、版本管理与一键回滚，并开源五种框架的版本更新通知组件。",
+      "details": [
+        "设计零停机发布方案，发布全程页面持续可用；业务项目仅需挂载一个通知组件即可接入，发布、历史记录与一键回滚统一收口，凭证本地加密存储。"
+      ]
+    },
+    {
+      "name": "vue3-crud-hooks",
+      "role": "作者",
+      "link": "https://github.com/YongHangPu/vue3-crud-hooks",
+      "description": "基于 Vue3 + Element Plus 的配置化 CRUD 组件库，旨在减少重复的后台管理系统表格/表单代码，支持通过 JSON 配置生成完整的增删改查界面。",
+      "details": [
+        "设计 useCrudPage 核心 Hook，单个 Hook 接管表格查询、分页、搜索与增删改全流程，大幅减少后台 CRUD 页面样板代码。",
+        "模块化架构支持独立使用与按需导入，自动适配常见后端响应结构，并配套开源完整后台演示项目，开箱即用。"
+      ]
+    },
+    {
       "name": "web-tracing",
       "role": "核心贡献者",
       "link": "https://github.com/M-cheng-web/web-tracing",
@@ -50,13 +69,6 @@
         "参与核心监控模块开发，优化数据上报策略（支持断网重连续传、闲时上报）。",
         "重构性能采集逻辑以兼容多平台（Vue2/3、React），提升 SDK 稳定性与兼容性。"
       ]
-    },
-    {
-      "name": "vue3-crud-hooks",
-      "role": "作者",
-      "link": "https://github.com/YongHangPu/vue3-crud-hooks",
-      "description": "基于 Vue3 + Element Plus 的配置化 CRUD 组件库，旨在减少重复的后台管理系统表格/表单代码，支持通过 JSON 配置生成完整的增删改查界面。",
-      "details": []
     }
   ],
   "workExperience": [
