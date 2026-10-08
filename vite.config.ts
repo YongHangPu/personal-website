@@ -11,6 +11,8 @@ const gzipAsync = promisify(gzip)
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages 项目页部署在子路径下（https://<user>.github.io/personal-website/）
+  base: '/personal-website/',
   plugins: [
     vue(),
     AutoImport({
