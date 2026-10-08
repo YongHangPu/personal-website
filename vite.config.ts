@@ -6,8 +6,27 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import viteCompression from 'vite-plugin-compression'
 import { gzip } from 'node:zlib'
 import { promisify } from 'node:util'
+import { copyFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 const gzipAsync = promisify(gzip)
+
+const OUT_DIR = 'dist/personal-website'
+
+// GitHub Pages 没有 SPA 回退机制，刷新/直链子路由会 404。
+// 利用其"404 时返回站点根目录 404.html"的约定，把 index.html 复制为 404.html，
+// 页面加载后由 vue-router 接管，URL 保持不变。
+function spaFallback() {
+  return {
+    name: 'spa-fallback',
+    apply: 'build' as const,
+    closeBundle() {
+      const out = resolve(process.cwd(), OUT_DIR)
+      copyFileSync(resolve(out, 'index.html'), resolve(out, '404.html'))
+      console.log('✨ [spa-fallback] - generated 404.html for GitHub Pages SPA fallback')
+    },
+  }
+}
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,6 +34,7 @@ export default defineConfig({
   base: '/personal-website/',
   plugins: [
     vue(),
+    spaFallback(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),
@@ -59,7 +79,7 @@ export default defineConfig({
     },
   ],
   build: {
-    outDir: 'dist/personal-website',
+    outDir: OUT_DIR,
     rollupOptions: {
       output: {
         chunkFileNames: 'assets/js/[name]-[hash].js',
