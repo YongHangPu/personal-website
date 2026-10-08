@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from "vue";
+import { ref, onMounted, onUnmounted, computed, watch } from "vue";
 
 const props = defineProps<{
   text: string;
@@ -15,8 +15,11 @@ const characters = computed(() => props.characterSet || defaultCharacterSet);
 const displayText = ref(props.text);
 const isAnimating = ref(false);
 
+let intervalId: ReturnType<typeof setInterval> | null = null;
+let disposed = false;
+
 const scramble = async () => {
-  if (isAnimating.value) return;
+  if (isAnimating.value || disposed) return;
   isAnimating.value = true;
 
   // const steps = props.iterations || 10;
@@ -25,12 +28,13 @@ const scramble = async () => {
   const delay = props.delay || 0;
 
   await new Promise((resolve) => setTimeout(resolve, delay));
+  if (disposed) return;
 
   const length = props.text.length;
   let frame = 0;
   const totalFrames = Math.round(duration / (1000 / frameRate));
 
-  const interval = setInterval(() => {
+  intervalId = setInterval(() => {
     frame++;
     const progress = frame / totalFrames;
     let result = "";
@@ -46,7 +50,8 @@ const scramble = async () => {
     displayText.value = result;
 
     if (frame >= totalFrames) {
-      clearInterval(interval);
+      clearInterval(intervalId!);
+      intervalId = null;
       displayText.value = props.text;
       isAnimating.value = false;
     }
@@ -63,6 +68,14 @@ watch(
     scramble();
   }
 );
+
+onUnmounted(() => {
+  disposed = true;
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+});
 </script>
 
 <template>

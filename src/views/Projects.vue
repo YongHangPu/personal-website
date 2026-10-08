@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { TopRight } from '@element-plus/icons-vue'
 import projectsData from '../data/projects.json'
 </script>
 

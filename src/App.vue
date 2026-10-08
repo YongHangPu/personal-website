@@ -46,7 +46,7 @@ const closeMobileMenu = () => {
             <el-menu-item index="/projects">开源项目</el-menu-item>
           </el-menu>
 
-          <button class="theme-toggle" @click="toggleDark()">
+          <button class="theme-toggle" aria-label="切换深色/浅色模式" @click="toggleDark()">
             <el-icon v-if="isDark"><Moon /></el-icon>
             <el-icon v-else><Sunny /></el-icon>
           </button>
