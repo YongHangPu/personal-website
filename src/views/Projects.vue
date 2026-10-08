@@ -43,7 +43,7 @@ import projectsData from '../data/projects.json'
           <p class="description">{{ project.description }}</p>
 
           <div v-if="project.contributions.length > 0" class="contributions">
-            <h4>核心贡献:</h4>
+            <h4>{{ project.role === '作者' ? '项目亮点' : '核心贡献' }}:</h4>
             <ul>
               <li v-for="(item, idx) in project.contributions" :key="idx">{{ item }}</li>
             </ul>
@@ -131,7 +131,7 @@ import projectsData from '../data/projects.json'
         padding-left: 20px;
 
         li {
-          font-size: 13px;
+          font-size: 14px;
           color: var(--el-text-color-regular);
           margin-bottom: 4px;
         }

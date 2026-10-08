@@ -41,7 +41,7 @@ const router = createRouter({
 const DEFAULT_TITLE = '濮永航 | 高级前端工程师'
 
 router.afterEach((to) => {
-  document.title = to.meta.title ? `${to.meta.title} | 濮永航` : DEFAULT_TITLE
+  document.title = to.meta.title ? `${to.meta.title}` : DEFAULT_TITLE
 })
 
 export default router
